@@ -1,0 +1,222 @@
+:root {
+  --bg-main: #942ce2;
+  --header-bg: #0a0e7e;
+  --menu-gap: 12rem;
+  --menu-padding: 10rem;
+  --card-bg: rgb(9, 0, 0);
+  --card-color: whitesmoke;
+  --card-shadow: 0 2px 8px rgba(232, 59, 59, 0.845);
+  --card-radius: 20px;
+  --cart-bg: #efe00d;
+  --cart-border: 4px solid #0de363;
+  --cart-shadow: 0 4px 12px rgba(224, 11, 11, 0.86);
+  --btn-bg: #d71db2;
+  --btn-color: rgb(0, 0, 0);
+  --btn-radius: 5px;
+  --order-btn-bg: #d70d0d;
+  --order-btn-color: aliceblue;
+  --tab-bg: #fff;
+  --tab-color: #4b136b;
+  --tab-active-bg: #d71db2;
+  --tab-active-color: #fff;
+  --search-bg: #fff;
+  --search-color: #222;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-main);
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-theme {
+  --bg-main: #181818;
+  --header-bg: #262626;
+  --menu-gap: 12rem;
+  --menu-padding: 10rem;
+  --card-bg: #222;
+  --card-color: #fafafa;
+  --card-shadow: 0 2px 8px rgb(221, 48, 209);
+  --card-radius: 20px;
+  --cart-bg: #b9b9d5;
+  --cart-border: 4px solid #cd2d2d;
+  --cart-shadow: 0 4px 12px rgba(0, 0, 0, 0.46);
+  --btn-bg: #7fffd4;
+  --btn-color: #181818;
+  --btn-radius: 5px;
+  --order-btn-bg: #553788;
+  --order-btn-color: #fff;
+  --tab-bg: #444;
+  --tab-color: #7fffd4;
+  --tab-active-bg: #7fffd4;
+  --tab-active-color: #222;
+  --search-bg: #222;
+  --search-color: #fff;
+}
+
+header {
+  background: var(--header-bg);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.greeting {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.search-filter {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 1rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-filter input[type="text"] {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  width: 230px;
+  background: var(--search-bg);
+  color: var(--search-color);
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.tab {
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  background: var(--tab-bg);
+  color: var(--tab-color);
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab.active {
+  background: var(--tab-active-bg);
+  color: var(--tab-active-color);
+  box-shadow: 0 2px 8px rgba(60, 0, 60, 0.07);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--menu-gap);
+  padding: var(--menu-padding);
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.card {
+  background: var(--card-bg);
+  color: var(--card-color);
+  width: 250px;
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  margin: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card-content button {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-radius: var(--btn-radius);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#cart {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--cart-bg);
+  border: var(--cart-border);
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: var(--cart-shadow);
+  z-index: 10;
+  color: #111;
+  transition: background 0.3s, color 0.3s;
+}
+
+#cart h3 {
+  margin-top: 0;
+}
+
+#cart button {
+  background: var(--order-btn-bg) !important;
+  color: var(--order-btn-color) !important;
+  border-radius: 5px !important;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    gap: 3rem;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  #cart {
+    position: static;
+    margin: 1rem auto;
+  }
+}

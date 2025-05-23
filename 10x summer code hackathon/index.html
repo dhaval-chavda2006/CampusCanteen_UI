@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusCanteen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <header>
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Theme">
+      <span id="themeIcon" class="material-icons">dark_mode</span>
+    </button>
+
+<div id="greeting"></div>
+<a href="orders.html" style="margin-left: 10px; font-weight: bold;">🧾 My Orders</a>
+
+
+
+    <div class="greeting" id="greeting"></div>
+    <h1>CampusCanteen</h1>
+    <p>Order Your Food Online!</p>
+  </header>
+
+  <div class="search-filter">
+    <input type="text" id="searchInput" placeholder="Search food by name..." oninput="filterMenu()"
+      autocomplete="off" />
+    <div class="tabs" id="tabs"></div>
+  </div>
+
+  <div class="menu" id="menu">
+    <!-- Food cards will go here -->
+  </div>
+  <div id="cart">
+    <h3>Cart</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: ₹<span id="total">0</span></p>
+    <button onclick="placeOrder()">Place Order</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
